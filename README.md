@@ -1,91 +1,89 @@
-<p align="center"><img src="docs/sources/tempo/logo_and_name.png" alt="Tempo Logo"></p>
-<p align="center">
-  <a href="https://github.com/grafana/tempo/releases"><img src="https://img.shields.io/github/v/release/grafana/tempo?display_name=tag&sort=semver" alt="Latest Release"/></a>
-  <img src="https://img.shields.io/github/license/grafana/tempo" alt="License" />
-  <a href="https://hub.docker.com/r/grafana/tempo/tags"><image src="https://img.shields.io/docker/pulls/grafana/tempo" alt="Docker Pulls"/></a>
-  <a href="https://grafana.slack.com/archives/C01D981PEE5"><img src="https://img.shields.io/badge/join%20slack-%23tempo-brightgreen.svg" alt="Slack" /></a>
-  <a href="https://community.grafana.com/c/grafana-tempo/40"><img src="https://img.shields.io/badge/discuss-tempo%20forum-orange.svg" alt="Community Forum" /></a>
-  <a href="https://goreportcard.com/report/github.com/grafana/tempo"><img src="https://goreportcard.com/badge/github.com/grafana/tempo" alt="Go Report Card" /></a>
-</p>
+# UniSaaS.UniCORE.Tempo
 
-Grafana Tempo is an open source, easy-to-use, and high-scale distributed tracing backend. Tempo is cost-efficient, requiring only object storage to operate, and is deeply integrated with Grafana, Prometheus, and Loki.
+**SCAFFOLD-ANCHOR repository — initial scaffold 2026-06-04.**
 
+Full scaffolding, upstream-fork integration, and source-code work all pending a fresh dedicated kickoff arc. This initial commit exists to lock the repository's identity, licence position, and place in the UniCORE Sanity Check fleet so the work cannot be forgotten.
 
-## Business value of distributed tracing
+Author: **Bryan Fred, Unitek Systems Limited, Bedford, United Kingdom.**
+First commit: **2026-06-04 17:45 UTC.**
 
-Distributed tracing helps teams quickly pinpoint performance issues and understand the flow of requests across services. The Traces Drilldown UI simplifies this process by offering a user-friendly interface to view and analyze trace data, making it easier to identify and resolve issues without needing to write complex queries.
+---
 
-Refer to [Use traces to find solutions](https://grafana.com/docs/tempo/latest/introduction/solutions-with-traces/) to learn more about how you can use distributed tracing to investigate and solve issues.
+## What this repository is
 
-## Traces Drilldown UI: A better way to get value from your tracing data
-We are excited to introduce the [Traces Drilldown](https://github.com/grafana/traces-drilldown) (formerly Explore Traces) app as part of the Grafana Explore suite. This app provides a queryless and intuitive experience for analyzing tracing data, allowing teams to quickly identify performance issues, latency bottlenecks, and errors without needing to write complex queries or use TraceQL.
+`bryanunitek/UniSaaS.UniCORE.Tempo` is the **Tempo** family member: SaaS-deployment-shape public gift surface. Documentation today; source code at certification.
 
-Key Features:
-- **Intuitive Trace Analysis**: Spot slow or error-prone traces with easy, point-and-click interactions.
-- **RED Metrics Overview**: Use Rate, Errors, and Duration metrics to highlight performance issues.
-- **Automated Comparison**: Identify problematic attributes with automatic trace comparison.
-- **Simplified Visualizations**: Access rich visual data without needing to construct TraceQL queries.
+**Family purpose:** Open-source distributed tracing — trace storage backend for UniCORE.GVB observability.
 
-![image](https://github.com/user-attachments/assets/991205df-1b27-489f-8ef0-1a05ee158996)
+**Deployment shape:** This is the **SaaS-shape** member of the family. It tracks the same upstream codebase as [`UniCORE.Tempo`](https://github.com/bryanunitek/UniCORE.Tempo) (on-prem shape) but carries SaaS-specific configuration, multi-tenant isolation patterns, and cloud-native deployment artefacts.
 
-To learn more see the following links:
-- [Traces Drilldown repo](https://github.com/grafana/traces-drilldown)
-- [Traces Drilldown documentation](https://grafana.com/docs/grafana/latest/explore/simplified-exploration/traces/)
-- [Demo video](https://www.youtube.com/watch?v=a3uB1C2oHA4)
+---
 
-## TraceQL
+## Upstream
 
-Tempo implements [TraceQL](https://grafana.com/docs/tempo/latest/traceql/), a traces-first query language inspired by LogQL and PromQL, which enables targeted queries or rich UI-driven analyses.
+- **Upstream project:** https://github.com/grafana/tempo
+- **Upstream licence:** AGPL-3.0
+- **Our relationship:** Fork-and-extend. Upstream codebase is consumed verbatim under its original licence; our additions sit on top under the same copyleft licence (code) and CC BY 4.0 (docs).
 
-### TraceQL metrics
+The merge discipline that governs how this repository absorbs upstream changes is documented in [`UPSTREAM-MERGE-DISCIPLINE.md`](UPSTREAM-MERGE-DISCIPLINE.md).
 
-[TraceQL metrics](https://grafana.com/docs/tempo/latest/traceql/metrics-queries/) is an experimental feature in Grafana Tempo that creates metrics from traces. Metric queries extend trace queries by applying a function to trace query results. This powerful feature allows for ad hoc aggregation of any existing TraceQL query by any dimension available in your traces, much in the same way that LogQL metric queries create metrics from logs.
+---
 
-Tempo is Jaeger, Zipkin, Kafka and OpenTelemetry compatible. It ingests batches in any of the mentioned formats, buffers them, and then writes them to Azure, GCS, S3, or local disk. As such, it's robust, cheap, and easy to operate.
+## Platforms
 
-## Getting started with Tempo
+Windows · Linux · macOS · iOS · Android
 
-- [Get started documentation](https://grafana.com/docs/tempo/latest/getting-started/)
-- [Deployment Examples](./example)
-  - [Docker Compose](./example/docker-compose)
-  - [Helm](./example/helm)
-  - [Jsonnet](./example/tk)
+---
 
-## Further reading
+## Family — the four-repo pattern
 
-To learn more about Tempo, consult the following documents & talks:
+UniCORE.Tempo is published as a **four-repo family**:
 
-- [How to get started with Tempo with Joe Elliott (video)](https://www.youtube.com/watch?v=zDrA7Ly3ovU)
-- [Grafana blog posts about Tempo](https://grafana.com/tags/tempo/)
-- [New in Grafana Tempo 2.0: Apache Parquet as the default storage format, support for TraceQL][tempo_20_announce]
-- [Get to know TraceQL: A powerful new query language for distributed tracing][traceql-post]
+- `bryanunitek/UniCORE.Tempo` — public on-prem-deployment-shape gift surface
+- `bryanunitek/UniSaaS.UniCORE.Tempo` — public SaaS-deployment-shape gift surface ← **this repo**
+- `bryanunitek/UniCORE.Tempo-Claw` (private) — on-prem-shape working repository
+- `bryanunitek/UniSaaS.UniCORE.Tempo-Claw` (private) — SaaS-shape working repository
 
-[tempo_20_announce]: https://grafana.com/blog/2023/02/01/new-in-grafana-tempo-2.0-apache-parquet-as-the-default-storage-format-support-for-traceql/
-[traceql-post]: https://grafana.com/blog/2023/02/07/get-to-know-traceql-a-powerful-new-query-language-for-distributed-tracing/
+---
 
-## Getting help
+## Status
 
-If you have any questions or feedback regarding Tempo:
+**SCAFFOLD-ANCHOR** as of 2026-06-04. See [`STATUS.md`](STATUS.md) for the full status breakdown.
 
-- Grafana Labs hosts a [forum](https://community.grafana.com/c/grafana-tempo/40) for Tempo. This is a great place to post questions and search for answers.
-- Ask a question on the [Tempo Slack channel](https://grafana.slack.com/archives/C01D981PEE5).
-- [File an issue](https://github.com/grafana/tempo/issues/new/choose) for bugs, issues and feature suggestions.
-- UI issues should be filed with [Grafana](https://github.com/grafana/grafana/issues/new/choose).
+---
 
-## OpenTelemetry
+## Files in this scaffold commit
 
-Tempo's receiver layer, wire format and storage format are all based directly on [standards](https://github.com/open-telemetry/opentelemetry-proto) and [code](https://github.com/open-telemetry/opentelemetry-collector) established by [OpenTelemetry](https://opentelemetry.io/).  We support open standards at Grafana!
+- [`README.md`](README.md) — this file
+- [`LICENSE.md`](LICENSE.md) — UniCORE additions licence
+- [`STATUS.md`](STATUS.md) — scaffold-anchor status
+- [`UPSTREAM-MERGE-DISCIPLINE.md`](UPSTREAM-MERGE-DISCIPLINE.md) — canonical merge discipline
+- [`AI-AUTHORSHIP.md`](AI-AUTHORSHIP.md) — AI authorship disclosure
 
-Check out the [Integration Guides](https://grafana.com/docs/tempo/latest/guides/instrumentation/) to see examples of OpenTelemetry instrumentation with Tempo.
+---
 
-## Other components
+## Related repositories — UniCORE programme
 
-### tempo-vulture
-[tempo-vulture](https://github.com/grafana/tempo/tree/main/cmd/tempo-vulture) is Tempo's bird themed consistency checking tool.  It writes traces to Tempo and then queries them back in a variety of ways.
+**Foundation triad (gift, public, CC BY 4.0):**
+- [`UniVERSE`](https://github.com/bryanunitek/UniVERSE) — programme
+- [`TrueAI`](https://github.com/bryanunitek/TrueAI) — Foundation (Nine Invariants)
+- [`UniCORE-AI`](https://github.com/bryanunitek/UniCORE-AI) — reference architecture (12 Levels)
 
-### tempo-cli
-[tempo-cli](https://github.com/grafana/tempo/tree/main/cmd/tempo-cli) is the place to put any utility functionality related to Tempo. See [Documentation](https://grafana.com/docs/tempo/latest/operations/tempo_cli/) for more info.
+**Implementation reference (deployment-shape pair):**
+- [`UniCORE`](https://github.com/bryanunitek/UniCORE) — on-prem-shape
+- [`UniSaaS.UniCORE`](https://github.com/bryanunitek/UniSaaS.UniCORE) — SaaS-shape
 
-## License
+**Substrate-services layer (deployment-shape pair):**
+- [`UniCORE.GVB`](https://github.com/bryanunitek/UniCORE.GVB) — on-prem-shape
+- [`UniSaaS.UniCORE.GVB`](https://github.com/bryanunitek/UniSaaS.UniCORE.GVB) — SaaS-shape
 
-Grafana Tempo is distributed under [AGPL-3.0-only](LICENSE). For Apache-2.0 exceptions, see [LICENSING.md](LICENSING.md).
+---
+
+## Contact
+
+- **Public discussion:** [GitHub Discussions](https://github.com/bryanunitek/UniSaaS.UniCORE.Tempo/discussions)
+- **Private contact / connection request:** [LinkedIn — Bryan Fred](https://www.linkedin.com/in/bryan-fred-02209753/)
+
+---
+
+*Author: Bryan Fred, Unitek Systems Limited, Bedford, United Kingdom. Public. Given, not sold. Irrevocable.*
