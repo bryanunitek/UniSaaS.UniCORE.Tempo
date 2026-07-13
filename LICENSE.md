@@ -31,7 +31,7 @@ This repository will, once forked, contain an **upstream open-source codebase** 
 - **UniCORE-authored code files** carry a `Copyright (c) Bryan Fred, Unitek Systems Limited` header and are governed by AGPL-3.0 (this file).
 - **UniCORE-authored documentation files** carry a `Copyright (c) Bryan Fred, Unitek Systems Limited` header and are governed by CC BY 4.0 (this file).
 
-For the operational discipline that maintains this boundary across upstream merges, see [`UPSTREAM-MERGE-DISCIPLINE.md`](UPSTREAM-MERGE-DISCIPLINE.md).
+For the operational discipline that maintains this boundary across upstream merges, see [`UPSTREAM-MERGE-DISCIPLINE.md`](https://git.unitek-systems.com/UniCORE/UniSaaS.UniCORE.Tempo/src/branch/main/UPSTREAM-MERGE-DISCIPLINE.md) (mirror: [GitHub](https://github.com/bryanunitek/UniSaaS.UniCORE.Tempo/blob/main/UPSTREAM-MERGE-DISCIPLINE.md)).
 
 ---
 
