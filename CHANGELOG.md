@@ -1,5 +1,25 @@
 <!-- next version -->
 
+# v3.0.3
+
+## 🔒 Security 🔒
+
+- `operations`: Update Go to 1.26.5 (CVE-2026-39822, CVE-2026-27145, CVE-2026-42504, CVE-2026-42505, CVE-2026-42507), google.golang.org/grpc to v1.82.1 (GHSA-hrxh-6v49-42gf), golang.org/x/net to v0.56.0 (CVE-2026-46600), golang.org/x/text to v0.39.0 (CVE-2026-56852), and go.opentelemetry.io/otel to v1.44.0 (CVE-2026-41178) ([#7726](https://github.com/grafana/tempo/issues/7726)) (@mattdurham)
+
+## 💡 Enhancements 💡
+
+- `query-frontend`: Add Tempo configuration documentation to the MCP server via the `docs-config` tool and `docs://config/overview` and `docs://config/reference` resources ([#7521](https://github.com/grafana/tempo/issues/7521)) (@knylander-grafana)
+  The configuration reference is generated from the default configuration, so it stays in sync with the code.
+- `query-frontend`: Update the TraceQL and metrics documentation served by the MCP server to match current capabilities. ([#7375](https://github.com/grafana/tempo/issues/7375)) (@knylander-grafana)
+
+## 🧰 Bug fixes 🧰
+
+- `tempo`: Fix incorrect version reported by `--version`, the build-info metric, and `/api/status/buildinfo`. The build version is now read from the new top-level VERSION file instead of the most recently created git tag, which could belong to a different release. ([#7469](https://github.com/grafana/tempo/issues/7469)) (@zhxiaogg)
+
+## 🔧 Changes 🔧
+
+- `docs`: remove guidance on running multiple monolithic instances. ([#7636](https://github.com/grafana/tempo/issues/7636)) (@mattdurham)
+
 # v3.0.2
 
 ## 🔒 Security 🔒
@@ -31,6 +51,7 @@
 * [CHANGE] TraceQL metrics - change default step intervals to align with new vParquet5 timestamp columns [#6413](https://github.com/grafana/tempo/pull/6413) (@mdisibio)
 * [CHANGE] Remove all traces of ingesters from the dashboards [#6352](https://github.com/grafana/tempo/pull/6352) (@javiermolinar)
 * [CHANGE] jsonnet: Add emptyDir data volume to block-builder StatefulSet [#6648](https://github.com/grafana/tempo/pull/6648) (@mapno)
+* [CHANGE] Remove deprecated block version examples [#6680](https://github.com/grafana/tempo/pull/6680) (@javiermolinar)
 * [CHANGE] Add quick checks to tempo mixin runbook [#6696](https://github.com/grafana/tempo/pull/6696) (@javiermolinar)
 * [CHANGE] Deprecate metrics-generator no-local-blocks [#6707](https://github.com/grafana/tempo/pull/6707) (@javiermolinar)
 * [CHANGE] Own local block and partition ring helpers [#6808](https://github.com/grafana/tempo/pull/6808) (@javiermolinar)
